@@ -15,17 +15,12 @@ struct ContentView: View {
     var body: some View {
         
         ZStack {
-            Color.white
-            
             Text("elid.ev")
                 .font(.system(size: 40, weight: .bold, design: .rounded))
-            
+        
             if isLoading {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: .black))
-                    .scaleEffect(3)
+                LoadingView()
             }
-            
         }
         .onAppear { startNetworkCall()
             
@@ -34,13 +29,26 @@ struct ContentView: View {
     
     func startNetworkCall() {
         isLoading = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             isLoading = false
-
+            
         }
     }
 }
 
 #Preview {
     ContentView()
+}
+
+struct LoadingView: View {
+    var body: some View {
+        ZStack {
+            Color.black
+                .edgesIgnoringSafeArea(.all)
+            
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                .scaleEffect(3)
+        }
+    }
 }
