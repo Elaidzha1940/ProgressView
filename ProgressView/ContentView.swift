@@ -19,6 +19,16 @@ struct ContentView: View {
             
             Text("elid.ev")
                 .font(.system(size: 40, weight: .bold, design: .rounded))
+            
+            if isLoading {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .black))
+                    .scaleEffect(3)
+            }
+            
+        }
+        .onAppear { startNetworkCall()
+            
         }
     }
     
