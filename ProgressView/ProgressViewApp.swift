@@ -1,9 +1,11 @@
+//  /*
 //
-//  ProgressViewApp.swift
-//  ProgressView
+//  Project: ProgressView
+//  File: ProgressViewApp.swift
+//  Created by: Elaidzha Shchukin
+//  Date: 05.10.2023
 //
-//  Created by Elaidzha Shchukin on 05.10.2023.
-//
+//  */
 
 import SwiftUI
 

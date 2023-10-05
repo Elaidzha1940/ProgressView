@@ -1,21 +1,33 @@
-//  
-//  ContentView.swift
-//  ProgressView
+//  /*
 //
-//  Created by Elaidzha Shchukin on 05.10.2023.
+//  Project: ProgressView
+//  File: ContentView.swift
+//  Created by: Elaidzha Shchukin
+//  Date: 05.10.2023
 //
+//  */
 
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isLoading = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        ZStack {
+            Color.white
+            
+            Text("elid.ev")
+                .font(.system(size: 40, weight: .bold, design: .rounded))
         }
-        .padding()
+    }
+    
+    func startNetworkCall() {
+        isLoading = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            isLoading = false
+
+        }
     }
 }
 
